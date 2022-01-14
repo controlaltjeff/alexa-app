@@ -260,8 +260,7 @@ class AlexaRequest extends Request implements \Develpr\AlexaApp\Contracts\AlexaR
 
     private function process()
     {
-        $data = $this->getContent();
-        $this->data = json_decode($data, true);
+        $this->data = $this->all();
         $this->intent = Arr::get($this->data, 'request.intent.name');
         $this->slots = Arr::get($this->data, 'request.intent.slots', []);
         $this->confirmationStatus = Arr::get($this->data, 'request.intent.confirmationStatus', '');
