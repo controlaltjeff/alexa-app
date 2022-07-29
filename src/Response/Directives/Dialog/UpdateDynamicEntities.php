@@ -33,16 +33,10 @@ class UpdateDynamicEntities extends DialogDirective
 
     public function toArray()
     {
-        $array = [
+        return [
             'updateBehavior' => $this->updateBehavior ?: self::UPDATE_BEHAVIOR_REPLACE,
             'type' => $this->getType(),
-            'types' => [],
+            'types' => $this->types,
         ];
-
-        $this->types->each(function ($type) use (&$array) {
-            $array['types'][] = $type->toArray();
-        });
-
-        return $array;
     }
 }
