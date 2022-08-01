@@ -34,7 +34,7 @@ class RenderDocument extends Directive
         $data =  [
             'type' => $this->type,
             'token' => Str::random(),
-            'document' => $this->document instanceof Document ? $this->document->toArray() : Document::fromJson($this->document>
+            'document' => $this->document instanceof Document ? $this->document->toArray() : Document::fromJson($this->document),
         ];
 
         if($this->datasources) {
