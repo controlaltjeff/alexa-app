@@ -7,12 +7,11 @@ use Illuminate\Support\Str;
 
 class RenderDocument extends Directive
 {
-    const TYPE = 'Alexa.Presentation.APL.RenderDocument';
-
     protected $document;
     protected $datasources;
+    protected $type;
 
-    public function __construct($document = null, $datasources = null)
+    public function __construct($document = null, $datasources = null, $type = 'Alexa.Presentation.APL.RenderDocument')
     {
         $this->document = $document;
         $this->datasources = $datasources;
@@ -31,7 +30,7 @@ class RenderDocument extends Directive
     public function toArray()
     {
         return [
-            'type' => self::TYPE,
+            'type' => $this->type,
             'token' => Str::random(),
             'document' => $this->document instanceof Document ? $this->document->toArray() : Document::fromJson($this->document),
             'datasources' => $this->datasources
