@@ -15,6 +15,7 @@ class RenderDocument extends Directive
     {
         $this->document = $document;
         $this->datasources = $datasources;
+        $this->type = $type;
     }
 
     public function setDocument($document)
