@@ -137,7 +137,16 @@ class AlexaResponse implements Jsonable
         }
 
         if (!is_null($this->reprompt)) {
-            $response['reprompt'] = $this->reprompt instanceof Reprompt ? $this->reprompt->toArray() : $this->reprompt;
+            if($this->reprompt instanceof Reprompt) {
+                if(trim($this->reprompt->getValue()) != "") {
+                    $response['reprompt'] = $this->reprompt->toArray();
+                }
+            }
+            else {
+                if(count($this->reprompt?->toArray() ?? [] > 0) {
+                    $response['reprompt'] = $this->reprompt;
+                }
+            }
         }
 
         if (!is_null($this->directives)) {
