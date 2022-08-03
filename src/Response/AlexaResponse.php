@@ -136,7 +136,7 @@ class AlexaResponse implements Jsonable
             $response['card'] = $this->card->toArray();
         }
 
-        if (!is_null($this->reprompt) && trim($this->reprompt->getValue()) != "") {
+        if (!is_null($this->reprompt)) {
             $response['reprompt'] = $this->reprompt instanceof Reprompt ? $this->reprompt->toArray() : $this->reprompt;
         }
 
