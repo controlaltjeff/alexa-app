@@ -181,11 +181,11 @@ class AlexaResponse implements Jsonable
     }
 
     /**
-     * @param Reprompt $reprompt
+     * @param $reprompt
      *
      * @return $this
      */
-    public function withReprompt(Reprompt $reprompt)
+    public function withReprompt($reprompt)
     {
         return $this->setReprompt($reprompt);
     }
@@ -287,11 +287,11 @@ class AlexaResponse implements Jsonable
     }
 
     /**
-     * @param Reprompt $reprompt
+     * @param $reprompt
      *
      * @return $this
      */
-    public function setReprompt(Reprompt $reprompt)
+    public function setReprompt($reprompt)
     {
         $this->reprompt = $reprompt;
 
