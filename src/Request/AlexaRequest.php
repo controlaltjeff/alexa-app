@@ -129,6 +129,16 @@ class AlexaRequest extends Request implements \Develpr\AlexaApp\Contracts\AlexaR
      */
     public function getSession()
     {
+        throw new \Exception('Use method "getSessionAttributes" instead.');
+    }
+    
+    /**
+     * Get all of the session values in an array
+     *
+     * @return array
+     */
+    public function getSessionAttributes()
+    {
         $sessionAttributes = Arr::get($this->getData(), 'session.attributes');
 
         if (!$sessionAttributes) {
