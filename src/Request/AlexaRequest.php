@@ -107,7 +107,7 @@ class AlexaRequest extends Request implements \Develpr\AlexaApp\Contracts\AlexaR
      *
      * @return bool
      */
-    public function hasSession(): bool
+    public function hasSession(bool $skipIfUninitialized = false)): bool
     {
         return Arr::has($this->getData(), 'session');
     }
