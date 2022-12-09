@@ -127,7 +127,7 @@ class AlexaRequest extends Request implements \Develpr\AlexaApp\Contracts\AlexaR
      *
      * @return array
      */
-    public function getSession() : Symfony\Component\HttpFoundation\Session\SessionInterface
+    public function getSession() : \Symfony\Component\HttpFoundation\Session\SessionInterface
     {
         throw new \Exception('Use method "getSessionAttributes" instead.');
     }
