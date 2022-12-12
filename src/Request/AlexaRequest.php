@@ -185,7 +185,7 @@ class AlexaRequest extends Request implements \Develpr\AlexaApp\Contracts\AlexaR
      */
     public function getSessionValue($key = null)
     {
-        return array_key_exists($key, $this->getSession()) ? $this->getSession()[$key] : null;
+        return array_key_exists($key, $this->getSessionAttributes()) ? $this->getSessionAttributes()[$key] : null;
     }
 
     /**

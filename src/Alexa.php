@@ -350,7 +350,7 @@ class Alexa
 
     private function setupSession()
     {
-        $this->session = $this->alexaRequest->getSession();
+        $this->session = $this->alexaRequest->getSessionAttributes();
     }
 
     private function setupContext()
